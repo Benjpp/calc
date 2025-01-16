@@ -7,22 +7,24 @@
  * as well as giving a mean of showing the contents of the matrix through standard output
  */
 typedef struct{
-    unsigned long rows;
-    unsigned long colums;
-    int **matrix;
+    unsigned int rows;
+    unsigned int columns;
+    float **matrix;
 }Matrix;
 
 /**
- * @brief: creates a new 1x1 matrix initialized to a value of 0 and assigns it to a pointer
+ * @brief: creates a new (n)x(n) identity assigns it to a pointer. The necessary space is also allocated in this function.
+ * 
+ * @param n: size of the identity matrix
  * 
  * @param matrix_data: pointer to assign the new Matrix
  * 
  * @return: exit code
  */
-int create_empty_matrix(Matrix* matrix_data);
+int create_identity_matrix(unsigned int n, Matrix* matrix_data);
 
 /**
- * @brief: creates a new (row)x(col) matrix initialized whith the numbers passed as parameters.
+ * @brief: creates a new (row)x(col) matrix initialized whith the numbers inputted
  * The insertion of numbers will be as follows: say we have n colums in our matrix, then we will insert in each
  * row, starting from the first row ([0]) every n numbers we encounter while iterating through the given list. 
  * If there are more numbers passed in the list that space in the matrix the operation will be aborted, and if there 
@@ -43,17 +45,13 @@ int create_empty_matrix(Matrix* matrix_data);
  * 
  * @param rows: number of rows the matrix has
  * 
- * @param colums: number of colums the matrix has
- * 
- * @param numbers: list of numbers the matrix will be initialized to
- * 
- * @param number_elements: number of elements gived in the anterior list
+ * @param columns: number of columns the matrix has
  * 
  * @param matrix_data: pointer to assign the new matrix
  * 
  * @return: exit code
  */
-int create_initialized_matrix(unsigned long rows, unsigned long colums, int numbers[], int number_elements, Matrix* matrix_data);
+int create_initialized_matrix(unsigned int rows, unsigned int columns, Matrix* matrix_data);
 
 /**
  * @brief: prints to standard output the contents of a matrix in a organized manner
@@ -62,5 +60,22 @@ int create_initialized_matrix(unsigned long rows, unsigned long colums, int numb
  */
 void print_matrix(Matrix matrix_data);
 
+/**
+ * @brief: function used to free all resources allocated for a matrix
+ * 
+ * @param matrix_data: the matrix to be destroyed
+ */
+void destroy_matrix(Matrix* matrix_data);
+
+/**
+ * @brief: helper function to allocate memory for a matrix
+ * 
+ * @param rows, columns: dimensions of the matrix, thus dimensions of the array to allocate
+ * 
+ * @param matrix_ptr: a pointer to the matrix pointer
+ * 
+ * @return: exit code
+ */
+int matrix_allocator(unsigned int rows, unsigned int columns, float*** matrix_ptr);
 
 #endif // MATRIX_H
