@@ -10,12 +10,20 @@ set(CMAKE_C_STANDARD 99)
 # Add the include directory for header files
 include_directories(include)
 
-# Add the source files
-# We specify the source directory and all .c files in it
-file(GLOB SRC_FILES "src/*.c")
+#variable to represent the relative path of source files
+set(SRC_PATH "./src/")
 
 # Create the executable from source files
-add_executable(myprogram ${SRC_FILES})
+add_executable(myprogram 
+                "${SRC_PATH}interpreter.c"
+                #The following line is to compile for testing tokenizing utilities from interpreter.c
+                "${SRC_PATH}prueba_interprete1-extraccion_de_tokens.c"
+                #The following line is to compile for testing the construction of the binary opeartiontree
+                #"${SRC_PATH}prueba_interprete2-construccion_arbol_operacion.c"
+                #The following line is to test for the binary tree utilities
+                #"${SRC_PATH}prueba-bintree.c"
+                "${SRC_PATH}bintree.c"
+                )
 
 # Optionally, add compile options (e.g., -Wall, -g for debugging)
 target_compile_options(myprogram PRIVATE -Wall -g)

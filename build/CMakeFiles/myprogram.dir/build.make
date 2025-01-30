@@ -69,47 +69,63 @@ include CMakeFiles/myprogram.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/myprogram.dir/flags.make
 
-CMakeFiles/myprogram.dir/src/main.c.o: CMakeFiles/myprogram.dir/flags.make
-CMakeFiles/myprogram.dir/src/main.c.o: /home/benji/calc/src/main.c
-CMakeFiles/myprogram.dir/src/main.c.o: CMakeFiles/myprogram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benji/calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/myprogram.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myprogram.dir/src/main.c.o -MF CMakeFiles/myprogram.dir/src/main.c.o.d -o CMakeFiles/myprogram.dir/src/main.c.o -c /home/benji/calc/src/main.c
+CMakeFiles/myprogram.dir/src/interpreter.c.o: CMakeFiles/myprogram.dir/flags.make
+CMakeFiles/myprogram.dir/src/interpreter.c.o: /home/benji/calc/src/interpreter.c
+CMakeFiles/myprogram.dir/src/interpreter.c.o: CMakeFiles/myprogram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benji/calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/myprogram.dir/src/interpreter.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myprogram.dir/src/interpreter.c.o -MF CMakeFiles/myprogram.dir/src/interpreter.c.o.d -o CMakeFiles/myprogram.dir/src/interpreter.c.o -c /home/benji/calc/src/interpreter.c
 
-CMakeFiles/myprogram.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myprogram.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/benji/calc/src/main.c > CMakeFiles/myprogram.dir/src/main.c.i
+CMakeFiles/myprogram.dir/src/interpreter.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myprogram.dir/src/interpreter.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/benji/calc/src/interpreter.c > CMakeFiles/myprogram.dir/src/interpreter.c.i
 
-CMakeFiles/myprogram.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myprogram.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/benji/calc/src/main.c -o CMakeFiles/myprogram.dir/src/main.c.s
+CMakeFiles/myprogram.dir/src/interpreter.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myprogram.dir/src/interpreter.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/benji/calc/src/interpreter.c -o CMakeFiles/myprogram.dir/src/interpreter.c.s
 
-CMakeFiles/myprogram.dir/src/matrix.c.o: CMakeFiles/myprogram.dir/flags.make
-CMakeFiles/myprogram.dir/src/matrix.c.o: /home/benji/calc/src/matrix.c
-CMakeFiles/myprogram.dir/src/matrix.c.o: CMakeFiles/myprogram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benji/calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/myprogram.dir/src/matrix.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myprogram.dir/src/matrix.c.o -MF CMakeFiles/myprogram.dir/src/matrix.c.o.d -o CMakeFiles/myprogram.dir/src/matrix.c.o -c /home/benji/calc/src/matrix.c
+CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o: CMakeFiles/myprogram.dir/flags.make
+CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o: /home/benji/calc/src/prueba_interprete1-extraccion_de_tokens.c
+CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o: CMakeFiles/myprogram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benji/calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o -MF CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o.d -o CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o -c /home/benji/calc/src/prueba_interprete1-extraccion_de_tokens.c
 
-CMakeFiles/myprogram.dir/src/matrix.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myprogram.dir/src/matrix.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/benji/calc/src/matrix.c > CMakeFiles/myprogram.dir/src/matrix.c.i
+CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/benji/calc/src/prueba_interprete1-extraccion_de_tokens.c > CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.i
 
-CMakeFiles/myprogram.dir/src/matrix.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myprogram.dir/src/matrix.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/benji/calc/src/matrix.c -o CMakeFiles/myprogram.dir/src/matrix.c.s
+CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/benji/calc/src/prueba_interprete1-extraccion_de_tokens.c -o CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.s
+
+CMakeFiles/myprogram.dir/src/bintree.c.o: CMakeFiles/myprogram.dir/flags.make
+CMakeFiles/myprogram.dir/src/bintree.c.o: /home/benji/calc/src/bintree.c
+CMakeFiles/myprogram.dir/src/bintree.c.o: CMakeFiles/myprogram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benji/calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/myprogram.dir/src/bintree.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/myprogram.dir/src/bintree.c.o -MF CMakeFiles/myprogram.dir/src/bintree.c.o.d -o CMakeFiles/myprogram.dir/src/bintree.c.o -c /home/benji/calc/src/bintree.c
+
+CMakeFiles/myprogram.dir/src/bintree.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/myprogram.dir/src/bintree.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/benji/calc/src/bintree.c > CMakeFiles/myprogram.dir/src/bintree.c.i
+
+CMakeFiles/myprogram.dir/src/bintree.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/myprogram.dir/src/bintree.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/benji/calc/src/bintree.c -o CMakeFiles/myprogram.dir/src/bintree.c.s
 
 # Object files for target myprogram
 myprogram_OBJECTS = \
-"CMakeFiles/myprogram.dir/src/main.c.o" \
-"CMakeFiles/myprogram.dir/src/matrix.c.o"
+"CMakeFiles/myprogram.dir/src/interpreter.c.o" \
+"CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o" \
+"CMakeFiles/myprogram.dir/src/bintree.c.o"
 
 # External object files for target myprogram
 myprogram_EXTERNAL_OBJECTS =
 
-myprogram: CMakeFiles/myprogram.dir/src/main.c.o
-myprogram: CMakeFiles/myprogram.dir/src/matrix.c.o
+myprogram: CMakeFiles/myprogram.dir/src/interpreter.c.o
+myprogram: CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o
+myprogram: CMakeFiles/myprogram.dir/src/bintree.c.o
 myprogram: CMakeFiles/myprogram.dir/build.make
 myprogram: CMakeFiles/myprogram.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/benji/calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable myprogram"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/benji/calc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable myprogram"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myprogram.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

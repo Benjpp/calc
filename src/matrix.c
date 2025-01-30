@@ -37,7 +37,7 @@ int create_initialized_matrix(unsigned int rows, unsigned int columns, Matrix* m
 
     for(unsigned int i = 0; i < rows; i++){
         for(unsigned int j = 0; j < columns; j++){
-            print("Enter END if u dont wish to enter more numbers. Otherwise, enter another number for row %d", i);    
+            printf("Enter END if u dont wish to enter more numbers. Otherwise, enter another number for row %d", i);    
             char inout_number[21];
             float aux;
             

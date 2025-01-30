@@ -1,6 +1,7 @@
-CMakeFiles/myprogram.dir/src/matrix.c.o: /home/benji/calc/src/matrix.c \
- /usr/include/stdc-predef.h /home/benji/calc/include/matrix.h \
- /usr/include/stdlib.h \
+CMakeFiles/myprogram.dir/src/interpreter.c.o: \
+ /home/benji/calc/src/interpreter.c /usr/include/stdc-predef.h \
+ /home/benji/calc/include/interpreter.h \
+ /home/benji/calc/include/structures/bintree.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -39,7 +40,10 @@ CMakeFiles/myprogram.dir/src/matrix.c.o: /home/benji/calc/src/matrix.c \
  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/strings.h /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
@@ -47,7 +51,4 @@ CMakeFiles/myprogram.dir/src/matrix.c.o: /home/benji/calc/src/matrix.c \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h /usr/include/string.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h

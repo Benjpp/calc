@@ -1,0 +1,13 @@
+Take the following expresion as a example: 
+	"34+13*2-6/3"
+The result would calculated in this manner for example, "34+26-2", "60-2", "58"
+
+Following a left to right type of building, we could construct the binary operation tree
+
+	   -
+	 /   \
+	+     /
+       / \   / \
+      34  * 6   3
+	 / \ 
+	13  2

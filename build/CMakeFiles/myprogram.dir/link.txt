@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/myprogram.dir/src/main.c.o CMakeFiles/myprogram.dir/src/matrix.c.o -o myprogram 
+/usr/bin/cc CMakeFiles/myprogram.dir/src/interpreter.c.o "CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o" CMakeFiles/myprogram.dir/src/bintree.c.o -o myprogram 

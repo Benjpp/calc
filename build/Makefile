@@ -129,53 +129,77 @@ myprogram/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/build
 .PHONY : myprogram/fast
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
+src/bintree.o: src/bintree.c.o
+.PHONY : src/bintree.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/main.c.o
-.PHONY : src/main.c.o
+src/bintree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/bintree.c.o
+.PHONY : src/bintree.c.o
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+src/bintree.i: src/bintree.c.i
+.PHONY : src/bintree.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/main.c.i
-.PHONY : src/main.c.i
+src/bintree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/bintree.c.i
+.PHONY : src/bintree.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+src/bintree.s: src/bintree.c.s
+.PHONY : src/bintree.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/main.c.s
-.PHONY : src/main.c.s
+src/bintree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/bintree.c.s
+.PHONY : src/bintree.c.s
 
-src/matrix.o: src/matrix.c.o
-.PHONY : src/matrix.o
+src/interpreter.o: src/interpreter.c.o
+.PHONY : src/interpreter.o
 
 # target to build an object file
-src/matrix.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/matrix.c.o
-.PHONY : src/matrix.c.o
+src/interpreter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/interpreter.c.o
+.PHONY : src/interpreter.c.o
 
-src/matrix.i: src/matrix.c.i
-.PHONY : src/matrix.i
+src/interpreter.i: src/interpreter.c.i
+.PHONY : src/interpreter.i
 
 # target to preprocess a source file
-src/matrix.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/matrix.c.i
-.PHONY : src/matrix.c.i
+src/interpreter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/interpreter.c.i
+.PHONY : src/interpreter.c.i
 
-src/matrix.s: src/matrix.c.s
-.PHONY : src/matrix.s
+src/interpreter.s: src/interpreter.c.s
+.PHONY : src/interpreter.s
 
 # target to generate assembly for a file
-src/matrix.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/matrix.c.s
-.PHONY : src/matrix.c.s
+src/interpreter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/interpreter.c.s
+.PHONY : src/interpreter.c.s
+
+src/prueba_interprete1-extraccion_de_tokens.o: src/prueba_interprete1-extraccion_de_tokens.c.o
+.PHONY : src/prueba_interprete1-extraccion_de_tokens.o
+
+# target to build an object file
+src/prueba_interprete1-extraccion_de_tokens.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o
+.PHONY : src/prueba_interprete1-extraccion_de_tokens.c.o
+
+src/prueba_interprete1-extraccion_de_tokens.i: src/prueba_interprete1-extraccion_de_tokens.c.i
+.PHONY : src/prueba_interprete1-extraccion_de_tokens.i
+
+# target to preprocess a source file
+src/prueba_interprete1-extraccion_de_tokens.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.i
+.PHONY : src/prueba_interprete1-extraccion_de_tokens.c.i
+
+src/prueba_interprete1-extraccion_de_tokens.s: src/prueba_interprete1-extraccion_de_tokens.c.s
+.PHONY : src/prueba_interprete1-extraccion_de_tokens.s
+
+# target to generate assembly for a file
+src/prueba_interprete1-extraccion_de_tokens.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.s
+.PHONY : src/prueba_interprete1-extraccion_de_tokens.c.s
 
 # Help Target
 help:
@@ -186,12 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... myprogram"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/matrix.o"
-	@echo "... src/matrix.i"
-	@echo "... src/matrix.s"
+	@echo "... src/bintree.o"
+	@echo "... src/bintree.i"
+	@echo "... src/bintree.s"
+	@echo "... src/interpreter.o"
+	@echo "... src/interpreter.i"
+	@echo "... src/interpreter.s"
+	@echo "... src/prueba_interprete1-extraccion_de_tokens.o"
+	@echo "... src/prueba_interprete1-extraccion_de_tokens.i"
+	@echo "... src/prueba_interprete1-extraccion_de_tokens.s"
 .PHONY : help
 
 
