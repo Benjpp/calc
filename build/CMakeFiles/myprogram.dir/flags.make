@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/benji/calc/include
 
-C_FLAGS = -Wall -g -std=gnu99
+C_FLAGS = -g -Wall -g -lm -std=gnu99
 

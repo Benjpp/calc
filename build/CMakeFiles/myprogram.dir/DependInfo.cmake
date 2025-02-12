@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/benji/calc/src/bintree.c" "CMakeFiles/myprogram.dir/src/bintree.c.o" "gcc" "CMakeFiles/myprogram.dir/src/bintree.c.o.d"
   "/home/benji/calc/src/interpreter.c" "CMakeFiles/myprogram.dir/src/interpreter.c.o" "gcc" "CMakeFiles/myprogram.dir/src/interpreter.c.o.d"
-  "/home/benji/calc/src/prueba_interprete1-extraccion_de_tokens.c" "CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o" "gcc" "CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o.d"
+  "/home/benji/calc/src/prueba_interprete2-construccion_arbol_operacion.c" "CMakeFiles/myprogram.dir/src/prueba_interprete2-construccion_arbol_operacion.c.o" "gcc" "CMakeFiles/myprogram.dir/src/prueba_interprete2-construccion_arbol_operacion.c.o.d"
   )
 
 # Targets to which this target links.

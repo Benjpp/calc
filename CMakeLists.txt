@@ -1,4 +1,4 @@
-# Set the minimum required version of CMake
+#Set the minimum required version of CMake
 cmake_minimum_required(VERSION 3.10)
 
 # Define the project name
@@ -14,19 +14,23 @@ include_directories(include)
 set(SRC_PATH "./src/")
 
 # Create the executable from source files
-add_executable(myprogram 
+add_executable(myprogram
+                "${SRC_PATH}bintree.c" 
                 "${SRC_PATH}interpreter.c"
                 #The following line is to compile for testing tokenizing utilities from interpreter.c
-                "${SRC_PATH}prueba_interprete1-extraccion_de_tokens.c"
+                #"${SRC_PATH}prueba_interprete1-extraccion_de_tokens.c"
                 #The following line is to compile for testing the construction of the binary opeartiontree
-                #"${SRC_PATH}prueba_interprete2-construccion_arbol_operacion.c"
+                "${SRC_PATH}prueba_interprete2-construccion_arbol_operacion.c"
                 #The following line is to test for the binary tree utilities
                 #"${SRC_PATH}prueba-bintree.c"
-                "${SRC_PATH}bintree.c"
+                
                 )
 
 # Optionally, add compile options (e.g., -Wall, -g for debugging)
-target_compile_options(myprogram PRIVATE -Wall -g)
+target_compile_options(myprogram PRIVATE -Wall -g -lm)
+
+target_link_libraries(myprogram PRIVATE m)
+
 
 # If you want to organize build outputs into a separate build directory
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)

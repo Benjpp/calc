@@ -7,7 +7,21 @@ Following a left to right type of building, we could construct the binary operat
 	   -
 	 /   \
 	+     /
-       / \   / \
-      34  * 6   3
-	 / \ 
-	13  2
+   / \   / \
+  34  * 6   3
+     / \
+    13  2
+
+Lets to it step by step:
+
+34+13:   ;  34+13*2:
+    +               +     (idea: if a binary op is found, we get the preceding operator);  34+13*2-6:   -          34+12*2-6/3:
+   / \   ;         / \    (and we put it into the node corresponding to the preceding  );              / \                  
+  34 13           34  *   (operator, then its son would be said preceding operator and );             +   6   ;                 
+                     / \  (the other found operator after the operation symbol         );            / \      ;                         -  
+                    13  2                                                                           34  *     ;                       /   \
+                                                                                                       / \                           +     /
+                                                                                                      13  2                         / \   / \
+                                                                                                                                   34  *  6  3
+                                                                                                                                      / \ 
+                                                                                                                                     13  2

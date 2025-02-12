@@ -33,6 +33,7 @@ void parse_tree(node* n);
 void evaluate_op(node* n);
 int insert_brackets(token* bracket_tokens, bintree* tree, node* n);
 token* bracket_tokens(token* parsed_tokens, int* number_tokens);
+void insert_result_before_next(token* bracket_tok, token* bracket_result, int number_tokens);
 
 /**
  * This functions works in combination with the char* next_token function, which is called to extracta token from where the pointer is currently 
@@ -251,10 +252,7 @@ bintree construct_algebraic_operation_tree(token* token_list, int number_of_toke
                 //PD: when inserting brackets, we pass the next token after the first bracket to the function call to insert the brackets, and the extraction  of tokens inside the bracket
                 //stops when we encounter a bracket, so after we must increment the i counter to first go to the bracket, +1, and then it must go to the next token, +2
                 length = insert_brackets(&token_list[i + 1], &tree, NULL);
-                i += length + 1;
-                break;
-            case T_CBRACKET:
-                
+                i += length;
                 break;
             default:
                 printf("Error parsing token list in construct_operation_tree function");
@@ -309,8 +307,7 @@ int insert_binop(token* pre_token, token* operation, token* post_token, bintree*
             node* right_son = create_node();
             //The operation will have 2 sons which are its operators, and they will be inserted from left to right sons just as in the expression
             if(post_token->type == T_OBRACKET){
-                length = insert_brackets(post_token + 1, tree, right_son) + 2;
-                aux->right = right_son;
+                length = insert_brackets(post_token + 1, tree, right_son) + 2 ;
             }else{
                 right_son->value = post_token;
                 insert_right(aux, right_son);
@@ -377,8 +374,7 @@ int insert_unop(token* pre_token, token* operation, token* post_token, bintree* 
                 node* right_son = create_node();
                 //The operation will have 2 sons which are its operators, and they will be inserted from left to right sons just as in the expression
                 if(post_token->type == T_OBRACKET){
-                    length = insert_brackets(post_token + 1, tree, right_son) + 2;
-                    aux->right = right_son;
+                    length = insert_brackets(post_token + 1, tree, right_son) + 2 ;
                 }else{
                     right_son->value = post_token;
                     insert_right(aux, right_son);
@@ -402,6 +398,37 @@ int insert_unop(token* pre_token, token* operation, token* post_token, bintree* 
             printf("Error in insert_unop\n");
             break;
     };
+    /*For exponentiation only
+    if(tree->root->value != NULL){
+        node* aux = search_tree(pre_token, tree->root);
+        //The value that preceded the operation will be substituted by the operation itself
+        aux->value = operation;
+        node* left_son = create_node();
+        node* right_son = create_node();
+        //The operation will have 2 sons which are its operators, and they will be inserted from left to right sons just as in the expression
+        if(post_token->type == T_BRACKET){
+            length = insert_brackets(post_token + 1, tree, right_son) + 2 ;
+        }else{
+            right_son->value = post_token;
+            insert_right(aux, right_son);
+        }
+        left_son->value = pre_token;
+        insert_left(aux, left_son);
+    }else{
+        //If the root has no value we just put the operation there
+        tree->root->value = operation;
+        node*post_token_node = create_node();
+        if(post_token->type == T_BRACKET){
+            length = insert_brackets(post_token + 1, tree, post_token_node) + 2;
+            tree->root->right = post_token_node;
+        }else{
+            post_token_node->value = post_token;
+            insert_right(tree->root, post_token_node);  
+        }
+    }
+    return length;
+}
+*/
     return length;
 }
 
@@ -411,8 +438,8 @@ node* search_tree(token* tok, node* root) {
     if (root == NULL) {
         return NULL;
     }
-    token* aux = (token*)(root->value);
-    if(aux == tok){
+    token aux = *(token*)(root->value);
+    if(tok->type == aux.type &&  ((variable*)(tok->value))->coefficient == ((variable*)(aux.value))->coefficient){
         return root;
     }
 
@@ -424,6 +451,26 @@ node* search_tree(token* tok, node* root) {
     return search_tree(tok, root->right);
 }
 
+//!TODO review this function and the one that replaced it. The replacement was made with chatGPT, try to understand how it varies from this one
+/*node* search_tree(token* tok, node* root){
+    if(root == NULL){
+        return root;
+    }
+    if(root->value == tok){
+        return root;
+    }
+    if(root->left != NULL && root->right != NULL){
+        search_tree(tok, root->left);
+        search_tree(tok, root->right);
+    }
+    if(root->left != NULL && root->right == NULL){
+        search_tree(tok, root->left);
+    } 
+    if(root->left == NULL && root->right != NULL){
+        search_tree(tok, root->right);
+    }
+}*/
+
 //Bracket extraction related functions
 //
 //Function used to get all tokens inside the brackets/parenthesis, we modify the integer value pointed at with the amount of tokens in the parent
@@ -433,10 +480,10 @@ node* search_tree(token* tok, node* root) {
 int insert_brackets(token* bracket_tok, bintree* tree, node* n){
 
     //First we determine into what  node we must insert the expresion in the brakcets
-    int called_from_binop = n == NULL ? 0 : 1;
+    int called_from_binop = n != NULL? 1 : 0;
     //If we werent called from binop, we will append the bracket to the first available left or right sons from the root node
     //We will use the same null node passed to do this
-    if(called_from_binop == 0){
+    if(called_from_binop == 0 && tree != NULL){
         n = create_node();
         //I will store in integer passed as argument a value of 1 or 0 in its value, 1 if it is put into the right, 0 if it was inserted in the left(In the case we were called from the main
         //construction function)
@@ -453,28 +500,28 @@ int insert_brackets(token* bracket_tok, bintree* tree, node* n){
 
     //Now we solve the bracket
     bintree bracket_sub_tree = construct_algebraic_operation_tree(inside_brackets, *number_tokens);
-    //We put the result into the position occupied byu the closing bracket
-    token* bracket_result = bracket_tok + *number_tokens;
+    token* bracket_result = (token*)malloc(sizeof(token));
     *bracket_result = evaluate_expr(bracket_sub_tree);
     //insert_bracket can also be called from inside a bracket, in which case we do not need to apend to any tree, because the goal is to append the resulting token to the list of tokens from the
     //original bracket, so if both tree and n are null, we dont want to insert jackshit
-    n->value = bracket_result;
+    if(n != NULL){
+        n->value = bracket_result;
+    }
     //We must put into the closing bracket the result pointer now
-   
+    insert_result_before_next(bracket_tok, bracket_result, *number_tokens);
     free(inside_brackets);
     printf("IN BRACKS\n\n");
-    return (*number_tokens);                                                                  
+    return *number_tokens;                                                                  
 }
 
 //Return the tokens that are inside the parenthesis, parsed_tokens already points at the first ocurrence after the first opening parenthesis
 token* bracket_tokens(token* parsed_tokens, int* number_tokens){
-    printf("bracket_tokens\n");
     token* brackets = (token*)malloc(sizeof(token));
     int counter = 0;
     //A parenthesis/bracket is closed using ), so we check for it in case it is another parenthesis inside a parenthesis
     //Reminder, value -2 for (, -3 for )
     int C_brackets = 1;
-    while(C_brackets > 0){
+    while(C_brackets != 0){
         brackets = (token*)realloc(brackets, sizeof(token) * (counter+1));
         if(parsed_tokens->type == T_OBRACKET){
             C_brackets++;
@@ -482,17 +529,22 @@ token* bracket_tokens(token* parsed_tokens, int* number_tokens){
         //If we encounter a closing bracket and C_bracket value is 1, it means we must stop on this iteration
         if(parsed_tokens->type == T_CBRACKET){
             C_brackets--;
+            continue;
         }
-        print_token(*parsed_tokens);
         brackets[counter] = *parsed_tokens;
         counter++;
         parsed_tokens++;
-        
+        *number_tokens += 1;
         }   
-    //Because in the last iteration we append the last closing bracket, which is already accounted for in the increments in the calls from insert_binop and construct algebriac_tree we 
-    //subtract 1 from the total count of tokens
-    *number_tokens = counter - 1;
+
     return brackets;
+}
+
+//Aux function to insert the result of a bracket into the position pointed by the closing part of a bracket, must put pointer of closing as pointer to result
+//bracket_tok points to the first opning bracket
+void insert_result_before_next(token* bracket_tok, token* bracket_result, int number_tokens){
+    token* closing_bracket = bracket_tok + number_tokens;
+    *closing_bracket = *bracket_result;
 }
 
 //Function to help debugging, prints a token in a nice manner
@@ -511,10 +563,10 @@ void print_token(token tok){
             printf("Unop: {%d, {%d}}\n", tok.type, *(int*)(tok.value));
             break;
         case T_OBRACKET:
-            printf("OBracket/Parenthesis. TYPE: %d\n", tok.type);
+            printf("OBracket/Parenthesis\n");
             break;
         case T_CBRACKET:
-            printf("CBracket/Parenthesis. TYPE: %d\n", tok.type);
+            printf("CBracket/Parenthesis\n");
             break;
         default:
             printf("Error printing token\n");

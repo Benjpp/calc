@@ -177,29 +177,29 @@ src/interpreter.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/interpreter.c.s
 .PHONY : src/interpreter.c.s
 
-src/prueba_interprete1-extraccion_de_tokens.o: src/prueba_interprete1-extraccion_de_tokens.c.o
-.PHONY : src/prueba_interprete1-extraccion_de_tokens.o
+src/prueba_interprete2-construccion_arbol_operacion.o: src/prueba_interprete2-construccion_arbol_operacion.c.o
+.PHONY : src/prueba_interprete2-construccion_arbol_operacion.o
 
 # target to build an object file
-src/prueba_interprete1-extraccion_de_tokens.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.o
-.PHONY : src/prueba_interprete1-extraccion_de_tokens.c.o
+src/prueba_interprete2-construccion_arbol_operacion.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete2-construccion_arbol_operacion.c.o
+.PHONY : src/prueba_interprete2-construccion_arbol_operacion.c.o
 
-src/prueba_interprete1-extraccion_de_tokens.i: src/prueba_interprete1-extraccion_de_tokens.c.i
-.PHONY : src/prueba_interprete1-extraccion_de_tokens.i
+src/prueba_interprete2-construccion_arbol_operacion.i: src/prueba_interprete2-construccion_arbol_operacion.c.i
+.PHONY : src/prueba_interprete2-construccion_arbol_operacion.i
 
 # target to preprocess a source file
-src/prueba_interprete1-extraccion_de_tokens.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.i
-.PHONY : src/prueba_interprete1-extraccion_de_tokens.c.i
+src/prueba_interprete2-construccion_arbol_operacion.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete2-construccion_arbol_operacion.c.i
+.PHONY : src/prueba_interprete2-construccion_arbol_operacion.c.i
 
-src/prueba_interprete1-extraccion_de_tokens.s: src/prueba_interprete1-extraccion_de_tokens.c.s
-.PHONY : src/prueba_interprete1-extraccion_de_tokens.s
+src/prueba_interprete2-construccion_arbol_operacion.s: src/prueba_interprete2-construccion_arbol_operacion.c.s
+.PHONY : src/prueba_interprete2-construccion_arbol_operacion.s
 
 # target to generate assembly for a file
-src/prueba_interprete1-extraccion_de_tokens.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete1-extraccion_de_tokens.c.s
-.PHONY : src/prueba_interprete1-extraccion_de_tokens.c.s
+src/prueba_interprete2-construccion_arbol_operacion.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myprogram.dir/build.make CMakeFiles/myprogram.dir/src/prueba_interprete2-construccion_arbol_operacion.c.s
+.PHONY : src/prueba_interprete2-construccion_arbol_operacion.c.s
 
 # Help Target
 help:
@@ -216,9 +216,9 @@ help:
 	@echo "... src/interpreter.o"
 	@echo "... src/interpreter.i"
 	@echo "... src/interpreter.s"
-	@echo "... src/prueba_interprete1-extraccion_de_tokens.o"
-	@echo "... src/prueba_interprete1-extraccion_de_tokens.i"
-	@echo "... src/prueba_interprete1-extraccion_de_tokens.s"
+	@echo "... src/prueba_interprete2-construccion_arbol_operacion.o"
+	@echo "... src/prueba_interprete2-construccion_arbol_operacion.i"
+	@echo "... src/prueba_interprete2-construccion_arbol_operacion.s"
 .PHONY : help
 
 

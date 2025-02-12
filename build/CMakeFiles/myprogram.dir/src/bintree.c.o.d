@@ -1,6 +1,7 @@
 CMakeFiles/myprogram.dir/src/bintree.c.o: /home/benji/calc/src/bintree.c \
- /usr/include/stdc-predef.h /home/benji/calc/include/structures/bintree.h \
- /usr/include/stdio.h \
+ /usr/include/stdc-predef.h /home/benji/calc/include/interpreter.h \
+ /home/benji/calc/include/structures/bintree.h \
+ /home/benji/calc/include/structures/bintree.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
