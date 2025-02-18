@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/myprogram.dir/src/bintree.c.o CMakeFiles/myprogram.dir/src/interpreter.c.o "CMakeFiles/myprogram.dir/src/prueba_interprete2-construccion_arbol_operacion.c.o" -o myprogram  -lm 

@@ -1,3 +1,0 @@
-/home/benji/calc/build/CMakeFiles/myprogram.dir
-/home/benji/calc/build/CMakeFiles/edit_cache.dir
-/home/benji/calc/build/CMakeFiles/rebuild_cache.dir
