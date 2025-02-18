@@ -16,6 +16,11 @@
 #define T_OBRACKET 4
 #define T_CBRACKET 5
 
+typedef enum expresion_type_flags{
+    EX_ALGEBRAIC,
+    EX_FUNCTION1
+}expr_flag;                  //Flags that represent the type of expresion inputted by the user
+
 typedef enum operation_flags{
     F_ADDITION,
     F_SUBTRACTION,
@@ -47,11 +52,6 @@ typedef struct operation{
     operation_flags op_flag;//If the type is a unary operator, the number on wich to perform the operation goes into the left node,
                             //and the other number that represents the "order" of the operation into the right node (e.g, 2^3, 2 is the number to wich perform the "order" 3 of exponentiation)
 }operation;                 //Using a enum to simplify the extraction of the operation to perform
-
-typedef struct expr_tree{
-    bintree* tree;
-    tree_flags expr_flag;
-}expr_tree;
 
 /**
  * @brief tokenizes the given expresion to parse through
@@ -131,5 +131,12 @@ bintree construct_algebraic_operation_tree(token* token_list, int number_of_toke
  * @param tok: token to be printed
  */
 void print_token(token tok);
+
+/**
+ * @brief: computes what type of operation has been inputted 
+ *
+ * @param expr: the string containing the inputted expresion
+ */
+expr_flag compute_expression_type(char* expr);
 
 #endif //INTERPRETER_H

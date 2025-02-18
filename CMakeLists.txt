@@ -7,8 +7,12 @@ project("Calc_C")
 # Specify the C standard version (e.g., C99)
 set(CMAKE_C_STANDARD 99)
 
+#Setting variable for graphic library, SDL in this case
+set(SDL_LIB /usr/local/include/SDL2)
+
 # Add the include directory for header files
 include_directories(include)
+include_directories(SDL_LIB)
 
 #variable to represent the relative path of source files
 set(SRC_PATH "./src/")
@@ -20,11 +24,15 @@ add_executable(myprogram
                 #The following line is to compile for testing tokenizing utilities from interpreter.c
                 #"${SRC_PATH}prueba_interprete1-extraccion_de_tokens.c"
                 #The following line is to compile for testing the construction of the binary opeartiontree
-                "${SRC_PATH}prueba_interprete2-construccion_arbol_operacion.c"
+                #"${SRC_PATH}prueba_interprete2-construccion_arbol_operacion.c"
                 #The following line is to test for the binary tree utilities
                 #"${SRC_PATH}prueba-bintree.c"
-                
-                )
+                #The following line is to test for the computing type and control flow of inputted expresions
+                #"${SRC_PATH}prueba_compute_type-reconocer_expresiones.c"    
+                #The following line is to test and use the function plotter, which was the main goal of this project
+                "{SRC_PATH}function_plotter.c"
+        )
+
 
 # Optionally, add compile options (e.g., -Wall, -g for debugging)
 target_compile_options(myprogram PRIVATE -Wall -g -lm)

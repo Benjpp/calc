@@ -634,3 +634,47 @@ static const operation operator_table[] = {
     {"END", 0}
 };
 */
+
+//Auxiliar function that parses the variables inside a parenthesis of a function expresion and return how many there are
+//Approach: when we write down a function, in the parenthesis the variables are separated by comas, and because we exclusively need to count the number of variables, we can just count the number of
+//comas and add +1, due to for ex f(x) has 0 comas 1 var, f(x,y) has 1 coma 2 vars,...
+int count_variables(char* expr){
+    int var_count = 0;
+    while(*expr != ')'){
+        if(*expr == ','){
+            var_count++;
+        }
+        expr++;
+    }
+    return var_count + 1;
+}
+
+expr_flag compute_expression_type(char* expr){
+    expr_flag type;
+    if((*expr >= 'A' && *expr <= 'Z') || (*expr >= 'a' && *expr <= 'z')){
+        //If the first char is a simple letter we are expecting maybe more letters until we reach a opening parenthesis, we could also be expecting a variable
+        expr++;
+        //We pass the string part where there are the first letters
+        while((*expr >= 'A' && *expr <= 'Z') || (*expr >= 'a' && *expr <= 'z')){
+            expr++;
+        }
+        //First encountered letters from a variable passed
+        if(*expr == '('){
+            //Functions start with a letter followed by a opening parenthesis, which means that after passing the first starting letters, if there is a parenthesis we must conclude it is a function
+            //Now we must compute how many variables are in the function
+            expr++;
+            int variable_count = count_variables(expr);
+            switch (variable_count){
+                case 1:
+                    type = EX_FUNCTION1;
+                    break;
+
+                default:
+                    printf("Error computing variable count in inputted function\n");
+                    break;
+            };
+        }
+    }
+    return type;
+}
+
